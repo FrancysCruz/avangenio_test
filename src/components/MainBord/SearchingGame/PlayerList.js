@@ -1,22 +1,18 @@
 import React from "react";
 import "../../../App.css"
 
-import { useState } from "react";
-
 import Player from "./Player";
 
-const PlayerList= ({}) => {
-
-    // const [players, setPlayers] = useState(['Dr Team', 'Mia Plays', 'Xeoxer', 'Nikmer', 'Francys'])
-    const players = ['Dr Team', 'Mia Plays', 'Xeoxer', 'Nikmer', 'Francys'];
+const PlayerList= ({players, showNumber}) => {
 
     return (
         <>
-            <ul className="players-list">
-                {players && players.map((name, index) => (
+            <ul className={`${showNumber ? 'players-list' : 'filtered-players-list'}`}>
+                {players && players.map((player, index) => (
                     <Player
                     number={index + 1}
-                    name={name}
+                    player = {player}
+                    showNumber={showNumber}
                     />
                     // <li key={index} className="flex items-center">
                     // <span className="w-6 h-6 bg-gray-700 rounded-full mr-2"></span>

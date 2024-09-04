@@ -1,7 +1,8 @@
 :root {
   --color-primary: #ecffe6b9;
   --color-secondary: #7E33EF;
-  --color-tertiary: #C8A1E0;
+  /* --color-tertiary: #C8A1E0; */
+  --color-tertiary: #2E073F;
   --color-opposite:  #FE8944;;
   --color-join: #3a235e;
   --color-text: #000;
@@ -21,7 +22,7 @@
   --color-primary: #23262A;
   /* --color-primary: #1A1A2E; */
   --color-secondary: #FE8944;
-  --color-tertiary: #41B06E;
+  --color-tertiary: #E85C0D;
   --color-opposite: #7E33EF;;
   --color-join: #f34e07;
   --color-text: #FFF;
@@ -120,7 +121,9 @@
 /*Login page*/
 
 .login {
-  background: linear-gradient(var(--color-secondary), var(--color-tertiary));
+  /* background: linear-gradient(var(--color-primary), var(--color-secondary)); */
+  /* background: linear-gradient(var(--color-secondary), var(--color-tertiary)); */
+  background: linear-gradient(var(--color-primary), var(--color-tertiary));
   /* background-image: url(); */
   display: flex;
   justify-content: center;
@@ -534,6 +537,7 @@
   width: 200px;
   height: fit-content;
   font-family: Arial, sans-serif;
+  /* position: relative; */
   /* margin: 1rem; */
 }
 
@@ -546,7 +550,7 @@
   gap: 3px;
   overflow: hidden;
   height: 100px;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   /* -ms-overflow-style: none; */
    /* IE and Edge */
 }
@@ -603,14 +607,40 @@
   padding: 10px;
   width: 100%;
   border-radius: 5px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   cursor: pointer;
   font-size: 16px;
 }
 
-.filtered-games {
-  color: var(--color-text);
-  list-style: none;
+/* Search Component */
+
+.search-component {
+  display: flex;
+  flex-direction: row;
+  /* position: absolute; */
+  width: 100%;
+}
+
+.search-component input {
+  width: 70%;
+  height: 30px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-component button {
+  height: 30px;
+}
+
+.filtered-players-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: fit-content;
+  overflow-y: scroll;
 }
 
 /* Treading Categories */
@@ -662,6 +692,7 @@
 .categories-item_number {
   color: var(--color-light-gray);
   font-size: 0.875rem;
+  padding: 0.5rem;
 }
 
 .categories-item_title {
@@ -703,6 +734,19 @@
   object-fit: cover; 
 }
 
+.number-section {
+  position: relative;
+}
+
+.detail {
+  margin: 0;
+  top: 20%;
+  position: absolute;
+}
+
+.title-section {
+  padding-left: 0.5rem;
+}
 /* Alerts Styles */
 
 .alert {
@@ -914,6 +958,7 @@
     margin-right: 10px;
   }
 
+  
   }
 /* Small Mobile Style  */
   @media screen and (max-width: 640px) {
@@ -929,9 +974,15 @@
     .center-panel,
     .right-panel {
       width: 100%;
-      height: calc(100vh - 200px);
+      height: calc(100vh - 100px);
       padding: 1rem;
       overflow-y: auto;
+    }
+
+    /* Rigth Panel Small Screens */
+
+    .card1__container p{
+      font-size: 2rem;
     }
 
     .center-panel {

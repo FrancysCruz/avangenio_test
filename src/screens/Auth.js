@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { users } from '../users/users';
+import { users } from '../data/users';
 import Login from '../components/Auth/Login';
 import Alert from '../components/Alert';
 

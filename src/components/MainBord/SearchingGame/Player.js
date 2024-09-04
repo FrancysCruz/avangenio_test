@@ -5,21 +5,26 @@ import { useDispatch } from 'react-redux';
 import { addItem } from "../../../redux/arraySlice";
 
 
-const Player= ({number, name}) => {
+const Player= ({number, player, showNumber}) => {
 
     const dispatch = useDispatch();
 
     const handleAddItem = () => {
-        dispatch(addItem({name, number}));
+        let name = player.name;
+        let avatar = player.avatar;
+        dispatch(addItem({name, avatar}));
       };
       
     return (
         <div className="player">
-            <div className="player-number">
-                {number}
-            </div>
-            <p className="player-name">{name}</p>
-            <img className="player-avatar" src={require(`../../../images/avatars/${number}.jpeg`)}/>
+            {
+                showNumber && 
+                <div className="player-number">
+                    {number}
+                </div>
+            }
+            <p className="player-name">{player.name}</p>
+            <img className="player-avatar" src={require(`../../../images/avatars/${player.avatar}.jpeg`)}/>
             <button className="sum_btn" onClick={handleAddItem}> + </button>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import searchicon from "../../../images/icons8-search-24.png"
 
 function SearchComponent({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -9,15 +10,19 @@ function SearchComponent({ onSearch }) {
   };
 
   return (
-    <form onSubmit={handleSearch}>
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search for games..."
-      />
-      <button type="submit" className="search_btn">Search</button>
-    </form>
+    <div>
+      <form onSubmit={handleSearch}  class="search-component">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search for games..."
+        />
+        <button type="submit">
+          <img src={searchicon}/>
+        </button>
+      </form>
+    </div>
   );
 }
 

@@ -24,7 +24,7 @@ const CenterPanel= () => {
             {sharedArray && sharedArray.map((item, index) => (
               <li className="chosen-player" key={index}>
                 <p> {item.name}</p>
-                <img className="player-avatar" src={require(`../../images/avatars/${item.number}.jpeg`)}/>
+                <img className="player-avatar" src={require(`../../images/avatars/${item.avatar}.jpeg`)}/>
                 <button className="sum_btn" onClick={() => handleRemoveItem(index)}> - </button>
               </li>
             ))}

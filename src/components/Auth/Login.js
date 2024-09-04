@@ -20,10 +20,10 @@ const Login= ({onLogin}) => {
 
   return (
     <>
-      {/* <div className="theme-login"> */}
-        {/* <ThemeToggle /> */}
-      {/* </div> */}
       <div className="login">
+        <div className="theme-login">
+          <ThemeToggle />
+        </div>
         <section className="login__container ">
           <h2>Log in</h2>
           <form onSubmit={handleSubmit} className="login__container--form" action="">
